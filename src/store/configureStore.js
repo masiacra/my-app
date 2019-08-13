@@ -1,4 +1,6 @@
 import { createStore } from "redux";
 
 
-const store = createStort(() => {}, {});
+const store = createStore(() => {}, {});
+
+export default store;
