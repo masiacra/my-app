@@ -12,7 +12,9 @@ class App extends React.Component {
 				<p className="App-intro">
 					Здесь будут мои самые залайканные фото
 				</p>
-				<p>Мое имя: {this.props.user}</p>
+				<p>Мое имя: {this.props.name}</p>
+				<p>Мое фамилия: {this.props.surname}</p>
+				<p>Мой возраст: {this.props.age}</p>
 				{/*Добавили данные из props*/}
 			</div>
 		);
@@ -25,7 +27,9 @@ class App extends React.Component {
 const mapStateToProps = store => {
 	console.log(store);
 	return {
-		user: store.user
+		name: store.name,
+		surname: store.surname, 
+		age: store.age
 	};
 };
 
