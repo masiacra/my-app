@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { connect } from "react-redux";
 import "./App.css"
 
 class App extends React.Component {
@@ -12,6 +12,8 @@ class App extends React.Component {
 				<p className="App-intro">
 					Здесь будут мои самые залайканные фото
 				</p>
+				<p>Мое имя: {this.props.user}</p>
+				{/*Добавили данные из props*/}
 			</div>
 		);
 	}
@@ -19,6 +21,13 @@ class App extends React.Component {
 }
 
 
+//функция приклеиваинья данных из store
+const mapStateToProps = store => {
+	console.log(store);
+	return {
+		user: store.user
+	};
+};
 
 
-export default App;
+export default connect(mapStateToProps)(App);
