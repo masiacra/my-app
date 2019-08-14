@@ -2,6 +2,10 @@ import React from 'react';
 import { connect } from "react-redux";
 import "./App.css"
 
+import User from "../components/User.js";
+import Page from "../components/Page.js";
+
+
 class App extends React.Component {
 	render() {
 		const { user, page } = this.props;
@@ -10,11 +14,8 @@ class App extends React.Component {
 				<header className="App-header">
 					<h1 className="App-title">Мой топ фото</h1>
 				</header>
-				<p>Привет, {user.name}!</p>
-				<p>
-				  У тебя {page.photos.length} фотографий 
-				  за {page.year} год
-				</p>
+				<User name={user.name} />
+				<Page photos={page.photos} year={page.year} />
 				
 				{/*Добавили данные из props*/}
 			</div>
