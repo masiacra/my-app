@@ -4,17 +4,18 @@ import "./App.css"
 
 class App extends React.Component {
 	render() {
+		const { user, page } = this.props;
 		return (
 			<div className="App">
 				<header className="App-header">
 					<h1 className="App-title">Мой топ фото</h1>
 				</header>
-				<p className="App-intro">
-					Здесь будут мои самые залайканные фото
+				<p>Привет, {user.name}!</p>
+				<p>
+				  У тебя {page.photos.length} фотографий 
+				  за {page.year} год
 				</p>
-				<p>Мое имя: {this.props.name}</p>
-				<p>Мое фамилия: {this.props.surname}</p>
-				<p>Мой возраст: {this.props.age}</p>
+				
 				{/*Добавили данные из props*/}
 			</div>
 		);
@@ -27,9 +28,8 @@ class App extends React.Component {
 const mapStateToProps = store => {
 	console.log(store);
 	return {
-		name: store.name,
-		surname: store.surname, 
-		age: store.age
+		user: store.user,
+		page: store.page
 	};
 };
 
