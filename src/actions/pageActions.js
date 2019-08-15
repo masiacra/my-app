@@ -1,8 +1,8 @@
-function pageActions(year) {
+function setYear(year) {
 	return {
 		type: 'SET_YEAR',
 		payload: year
-	}
+	};
 }
 
-export default pageActions;
+export default setYear;

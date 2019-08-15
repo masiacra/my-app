@@ -4,6 +4,8 @@ import "./App.css"
 
 import User from "../components/User.js";
 import Page from "../components/Page.js";
+import setYear from "../actions/pageActions";
+
 
 
 class App extends React.Component {
@@ -34,5 +36,14 @@ const mapStateToProps = store => {
 	};
 };
 
+const mapDispatchToProps = dispatch => {
+	return {
+		setYearAction: action => dispatch(setYear(action))
+	};
+};
 
-export default connect(mapStateToProps)(App);
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(App);
