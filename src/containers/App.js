@@ -40,6 +40,8 @@ const mapStateToProps = store => {
 	};
 };
 
+
+//приклеиваем наш action к контейнеру
 const mapDispatchToProps = dispatch => {
 	return {
 		setYearAction: year => dispatch(setYear(year))
