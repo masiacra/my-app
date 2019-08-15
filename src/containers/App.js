@@ -10,14 +10,18 @@ import setYear from "../actions/pageActions";
 
 class App extends React.Component {
 	render() {
-		const { user, page } = this.props;
+		const { user, page, setYearAction } = this.props;
 		return (
 			<div className="App">
 				<header className="App-header">
 					<h1 className="App-title">Мой топ фото</h1>
 				</header>
 				<User name={user.name} />
-				<Page photos={page.photos} year={page.year} />
+				<Page 
+					photos={page.photos} 
+					year={page.year} 
+					setYear={setYearAction}
+				/>
 				
 				{/*Добавили данные из props*/}
 			</div>
@@ -38,7 +42,7 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		setYearAction: action => dispatch(setYear(action))
+		setYearAction: year => dispatch(setYear(year))
 	};
 };
 
