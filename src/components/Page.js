@@ -16,9 +16,15 @@ class Page extends Component {
 				  У тебя {photos.length} фотографий 
 				  за {year} год
 				</p>
-				<button onClick={this.clickHandler}>2016</button>
-				<button onClick={this.clickHandler}>2017</button>
-				<button onClick={this.clickHandler}>2018</button>
+				<button className="btn" onClick={this.clickHandler}>
+					2016
+				</button>
+				<button className="btn" onClick={this.clickHandler}>
+					2017
+				</button>
+				<button className="btn" onClick={this.clickHandler}>
+					2018
+				</button>
 			</div>
 		);
 	}
