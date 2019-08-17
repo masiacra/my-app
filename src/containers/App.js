@@ -4,7 +4,7 @@ import "./App.css"
 
 import User from "../components/User.js";
 import Page from "../components/Page.js";
-import setYear from "../actions/pageActions";
+import { setYear } from "../actions/pageActions";
 
 
 
