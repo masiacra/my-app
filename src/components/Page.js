@@ -11,7 +11,7 @@ class Page extends Component {
 	render() {
 		const { year, photos } = this.props;
 		return (
-			<div>
+			<div className="ib page">
 				<p>
 				  У тебя {photos.length} фотографий 
 				  за {year} год
