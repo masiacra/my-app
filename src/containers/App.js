@@ -4,13 +4,13 @@ import "./App.css"
 
 import User from "../components/User.js";
 import Page from "../components/Page.js";
-import { setYear } from "../actions/pageActions";
+import {  getPhotos } from "../actions/pageActions";
 
 
 
 class App extends React.Component {
 	render() {
-		const { user, page, setYearAction } = this.props;
+		const { user, page, getPhotosAction } = this.props;
 		return (
 			<div className="App">
 				<header className="App-header">
@@ -20,7 +20,8 @@ class App extends React.Component {
 				<Page 
 					photos={page.photos} 
 					year={page.year} 
-					setYear={setYearAction}
+					getPhotos={getPhotosAction}
+					isHidden={page.isHidden}
 				/>
 				
 				{/*Добавили данные из props*/}
@@ -36,7 +37,7 @@ const mapStateToProps = store => {
 	console.log(store);
 	return {
 		user: store.user,
-		page: store.page
+		page: store.page,
 	};
 };
 
@@ -44,7 +45,7 @@ const mapStateToProps = store => {
 //приклеиваем наш action к контейнеру
 const mapDispatchToProps = dispatch => {
 	return {
-		setYearAction: year => dispatch(setYear(year))
+		getPhotosAction: year => dispatch(getPhotos(year))
 	};
 };
 

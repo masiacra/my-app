@@ -6,15 +6,18 @@ class Page extends Component {
 	clickHandler = e => {
 		const target = e.target;
 		const value = Number(target.innerText);
-		this.props.setYear(value);
+		this.props.getPhotos(value);
 	}
 	render() {
-		const { year, photos } = this.props;
+		const { year, photos, isHidden } = this.props;
 		return (
 			<div className="ib page">
 				<p>
-				  У тебя {photos.length} фотографий 
-				  за {year} год
+				  { isHidden ? 
+				   `У тебя ${photos.length} фотографий за ${year} год` :
+				   'Loading'
+				  }
+				  
 				</p>
 				<button className="btn" onClick={this.clickHandler}>
 					2016
@@ -33,7 +36,8 @@ class Page extends Component {
 Page.propTypes = {
 	year: PropTypes.number.isRequired,
 	photos: PropTypes.array.isRequired,
-	setYear: PropTypes.func.isRequired
+	getPhotos: PropTypes.func.isRequired,
+	isHidden: PropTypes.bool.isRequired
 };
 
 export default Page;
